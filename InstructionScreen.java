@@ -6,14 +6,14 @@ public class InstructionScreen extends World
     Stack<String> read = new Stack<String>();
     Label text;
     String oldRemoved;
+    int numInstructions = 10;
 
     public InstructionScreen()
     {
         super(600, 400, 1);
-
-        unread.add("Instructions 3");
-        unread.add("Instructions 2");
-        unread.add("Instructions 1");
+        for(int i = numInstructions; i > 0; i--) {
+            unread.add("Instructions " + i);
+        }
 
         Button navButton = new Button("nav", "right");
         addObject(navButton, 300, 325);
