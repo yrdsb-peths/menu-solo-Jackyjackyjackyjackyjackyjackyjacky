@@ -3,9 +3,12 @@ public class Stack<Type> {
         private Type item;
         private Node next;
     }
+
     Node first;
+    int length = 0;
 
     public void add(Type item) {
+        length += 1;
         if(first == null) {
             first = new Node();
         }
@@ -17,9 +20,14 @@ public class Stack<Type> {
         first.item = item;
     }
 
-    public Type remove() {
+    public Type pop() {
+        length -= 1;
         Node toRemove = first;
         first = first.next;
         return toRemove.item;
+    }
+
+    public int getLength() {
+        return length;
     }
 }

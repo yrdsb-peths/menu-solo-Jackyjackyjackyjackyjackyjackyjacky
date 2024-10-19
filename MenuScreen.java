@@ -11,8 +11,8 @@ public class MenuScreen extends World {
       queue.add("images/carrot.png");
       queue.add("images/bellPepper.png");
 
-      Button navButton = new Button("nav");
-      Button avButton = new Button("avatar");
+      Button navButton = new Button("nav", "right");
+      Button avButton = new Button("avatar", "right");
       avatar = new Avatar();
 
       cycleAvatar();
@@ -26,9 +26,5 @@ public class MenuScreen extends World {
       String id = queue.pop();
       avatar.setAvatar(id);
       queue.add(id);
-    }
-
-    public void cycleNav() {
-        
     }
 }
