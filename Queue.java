@@ -15,7 +15,7 @@ public class Queue<Type> {
             Node oldLast = last;
             last = new Node();
             last.item = item;
-            last.next = oldLast;
+            oldLast.next = last;
         }
     }
 
