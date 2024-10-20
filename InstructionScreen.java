@@ -28,7 +28,6 @@ public class InstructionScreen extends World
 
         addObject(leftButton, 250, 250);
         addObject(rightButton, 350, 250);
-
     }
 
     public void forwards() {

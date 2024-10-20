@@ -15,6 +15,7 @@ public class MenuScreen extends World {
       Button avButton = new Button("avatar", "right");
       avatar = new Avatar();
 
+
       cycleAvatar();
 
       addObject(avatar, 300, 100);

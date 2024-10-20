@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Button extends Actor {
-    String purpose;
-    String direction;
-    static World[] order = {new MenuScreen(), new InstructionScreen()};
+    String purpose, direction;
+    static boolean menuScreenSet = false;
+    static World[] order = {new MenuScreen(), new InstructionScreen(), new Highscores()};
     static int current = 0;
 
     public Button(String purpose, String direction) {
@@ -18,20 +18,28 @@ public class Button extends Actor {
     }
 
     public void act() {
+        if(menuScreenSet == false) {
+            menuScreenSet = true;
+            Greenfoot.setWorld(order[0]);
+        }
         if (Greenfoot.mouseClicked(this)) {
             if(purpose.equals("nav")) {
                 changeWorld();
             }
 
             if(purpose.equals("avatar")) {
-                MenuScreen menu = (MenuScreen) getWorld();
-                menu.cycleAvatar();
+                changeAvatar();
             }
 
             if(purpose.equals("instructions")) {
                 changeInstructions();
             }
         }
+    }
+
+    public void changeAvatar() {
+        MenuScreen menu = (MenuScreen) getWorld();
+        menu.cycleAvatar();
     }
 
     public void changeInstructions() {
