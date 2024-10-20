@@ -21,6 +21,7 @@ public class Button extends Actor {
         if(menuScreenSet == false) {
             menuScreenSet = true;
             Greenfoot.setWorld(order[0]);
+            current = 0;
         }
         if (Greenfoot.mouseClicked(this)) {
             if(purpose.equals("nav")) {
